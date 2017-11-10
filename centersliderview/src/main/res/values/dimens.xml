@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="center_slider_view_dragger_width">80dp</dimen>
+    <dimen name="center_slider_view_dragger_height">44dp</dimen>
+    <dimen name="center_slider_view_height_buffer">5dp</dimen>
+    <dimen name="center_slider_view_base_line_text_size">15sp</dimen>
+    <dimen name="center_slider_view_tick_height_large">12dp</dimen>
+    <dimen name="center_slider_view_tick_height_small">6dp</dimen>
+    <dimen name="center_slider_view_tick_text_padding">25dp</dimen>
+    <dimen name="center_slider_view_tooltip_dragger_distance">4dp</dimen>
+    <dimen name="center_slider_view_tooltip_text_size">18sp</dimen>
+    <dimen name="center_slider_view_tooltip_text_padding">12dp</dimen>
+    <dimen name="center_slider_view_tooltip_height">48dp</dimen>
+
+    <integer name="center_slider_view_dragger_animation_ms">200</integer>
+    <integer name="center_slider_view_center_animation_ms">300</integer>
+</resources>

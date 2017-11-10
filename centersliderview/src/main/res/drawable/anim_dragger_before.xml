@@ -1,0 +1,84 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:width="80dp"
+            android:height="44dp"
+            android:viewportWidth="80"
+            android:viewportHeight="44">
+            <group
+                android:name="group"
+                android:translateX="16"
+                android:translateY="4">
+                <path
+                    android:name="path"
+                    android:pathData="M 18 0 L 30 0 C 39.941 0 48 8.059 48 18 L 48 18 C 48 27.941 39.941 36 30 36 L 18 36 C 8.059 36 0 27.941 0 18 L 0 18 C 0 8.059 8.059 0 18 0 Z"
+                    android:fillColor="@android:color/white"
+                    android:strokeColor="@android:color/transparent"
+                    android:strokeWidth="1"/>
+                <path
+                    android:name="path_1"
+                    android:pathData="M 32.71 14.71 L 35.29 17.29 L 35.29 17.29 C 35.68 17.68 35.68 18.32 35.29 18.71 L 32.71 21.29 L 32.71 21.29 C 32.32 21.68 31.68 21.68 31.29 21.29 C 31.11 21.11 31 20.85 31 20.59 L 31 15.41 L 31 15.41 C 31 14.86 31.45 14.41 32 14.41 C 32.27 14.41 32.52 14.52 32.71 14.71 Z"
+                    android:fillColor="@color/super_dark"
+                    android:strokeColor="@android:color/transparent"
+                    android:strokeWidth="1"/>
+                <path
+                    android:name="path_2"
+                    android:pathData="M 15.29 14.71 L 12.71 17.29 L 12.71 17.29 C 12.32 17.68 12.32 18.32 12.71 18.71 L 15.29 21.29 L 15.29 21.29 C 15.68 21.68 16.32 21.68 16.71 21.29 C 16.89 21.11 17 20.85 17 20.59 L 17 15.41 L 17 15.41 C 17 14.86 16.55 14.41 16 14.41 C 15.73 14.41 15.48 14.52 15.29 14.71 Z"
+                    android:fillColor="@color/super_dark"
+                    android:strokeColor="@android:color/transparent"
+                    android:strokeWidth="1"/>
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="group">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="translateX"
+                    android:duration="@integer/center_slider_view_dragger_animation_ms"
+                    android:valueFrom="16"
+                    android:valueTo="0"
+                    android:valueType="floatType"/>
+                <objectAnimator
+                    android:propertyName="translateY"
+                    android:duration="@integer/center_slider_view_dragger_animation_ms"
+                    android:valueFrom="4"
+                    android:valueTo="0"
+                    android:valueType="floatType"/>
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="path">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="pathData"
+                android:duration="@integer/center_slider_view_dragger_animation_ms"
+                android:valueFrom="M 18 0 L 30 0 C 39.941 0 48 8.059 48 18 L 48 18 C 48 27.941 39.941 36 30 36 L 18 36 C 8.059 36 0 27.941 0 18 L 0 18 C 0 8.059 8.059 0 18 0 Z"
+                android:valueTo="M 22 0 L 58 0 C 70.15 0 80 9.85 80 22 L 80 22 C 80 34.15 70.15 44 58 44 L 22 44 C 9.85 44 0 34.15 0 22 L 0 22 C 0 9.85 9.85 0 22 0 Z"
+                android:valueType="pathType" />
+        </aapt:attr>
+    </target>
+    <target android:name="path_1">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:propertyName="pathData"
+                android:duration="@integer/center_slider_view_dragger_animation_ms"
+                android:valueFrom="M 32.71 14.71 L 35.29 17.29 L 35.29 17.29 C 35.68 17.68 35.68 18.32 35.29 18.71 L 32.71 21.29 L 32.71 21.29 C 32.32 21.68 31.68 21.68 31.29 21.29 C 31.11 21.11 31 20.85 31 20.59 L 31 15.41 L 31 15.41 C 31 14.86 31.45 14.41 32 14.41 C 32.27 14.41 32.52 14.52 32.71 14.71 Z"
+                android:valueTo="M 64.71 18.71 L 67.29 21.29 L 67.29 21.29 C 67.68 21.68 67.68 22.32 67.29 22.71 L 64.71 25.29 L 64.71 25.29 C 64.32 25.68 63.68 25.68 63.29 25.29 C 63.11 25.11 63 24.85 63 24.59 L 63 19.41 L 63 19.41 C 63 18.86 63.45 18.41 64 18.41 C 64.27 18.41 64.52 18.52 64.71 18.71 Z"
+                android:valueType="pathType"/>
+        </aapt:attr>
+    </target>
+    <target android:name="path_2">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="pathData"
+                android:duration="@integer/center_slider_view_dragger_animation_ms"
+                android:valueFrom="M 15.29 14.71 L 12.71 17.29 L 12.71 17.29 C 12.32 17.68 12.32 18.32 12.71 18.71 L 15.29 21.29 L 15.29 21.29 C 15.68 21.68 16.32 21.68 16.71 21.29 C 16.89 21.11 17 20.85 17 20.59 L 17 15.41 L 17 15.41 C 17 14.86 16.55 14.41 16 14.41 C 15.73 14.41 15.48 14.52 15.29 14.71 Z"
+                android:valueTo="M 15.29 18.71 L 12.71 21.29 L 12.71 21.29 C 12.32 21.68 12.32 22.32 12.71 22.71 L 15.29 25.29 L 15.29 25.29 C 15.68 25.68 16.32 25.68 16.71 25.29 C 16.89 25.11 17 24.85 17 24.59 L 17 19.41 L 17 19.41 C 17 18.86 16.55 18.41 16 18.41 C 15.73 18.41 15.48 18.52 15.29 18.71 Z"
+                android:valueType="pathType"/>
+        </aapt:attr>
+    </target>
+</animated-vector>

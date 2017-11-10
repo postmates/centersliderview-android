@@ -1,0 +1,6 @@
+<resources>
+    <plurals name="center_slider_view_units" translatable="false">
+        <item quantity="one">%d min</item>
+        <item quantity="other">%d min</item>
+    </plurals>
+</resources>

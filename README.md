@@ -1,6 +1,8 @@
 
 # Center Slider View
 
+![Demo Gif](./doc_files/slider_demo.gif)
+
 ## Usage
 
 Feel free to browse the sampleslider module for an example of how to use this view.
@@ -63,14 +65,18 @@ center of the view again.
 
 ### Implementation Details
 
-This slider is primarily achieved by drawing directly to the canvas in `onDraw` (not by
+This slider is primarily achieved by drawing directly to the canvas in `onDraw()` (not by
 adding views to a viewgroup).  It uses two `AnimatedVectorDrawable`s to animate the 
-dragger's expanding and contracting states.
+dragger's expanding and contracting states.  The two drawables are swapped out when the
+user presses down on the dragger and then lifts up.
+
+The animations themselves are processed by a handler that runs every 16 ms
+(~= 60 frames/sec) and calls `invalidate()`, which then calls `onDraw()`.
 
 ### References:
 
 [slider design link][1]  
-[developer seekbar link][2]
+[developer seekbar link][2]  
 [xml attributes][3]
 
 [1]: https://material.io/guidelines/components/sliders.html

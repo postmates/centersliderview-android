@@ -75,9 +75,9 @@ The animations themselves are processed by a handler that runs every 16 ms
 
 ### References:
 
+[xml attributes][3]  
 [slider design link][1]  
 [developer seekbar link][2]  
-[xml attributes][3]
 
 [1]: https://material.io/guidelines/components/sliders.html
 [2]: https://developer.android.com/reference/android/widget/SeekBar.html

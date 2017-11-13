@@ -1,7 +1,7 @@
 
 # Center Slider View
 
-![Demo Gif](./doc_files/slider_demo.gif | width=300)
+![Demo Gif](./doc_files/slider_demo.gif)
 
 ## Usage
 

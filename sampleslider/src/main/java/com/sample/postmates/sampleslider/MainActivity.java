@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
     public void resetClicked(View view) {
         CenterSliderView.SliderInfo info =
                 new CenterSliderView.SliderInfo.Builder()
-                        .setBounds(0, 60)
+                        .setBounds(0, 20)
                         .setIntervalsToEdge(6)
                         .setLargeTickInterval(5)
-                        .setStartValue(27)
-                        .setValueTextOverride(27, "Predicted")
+                        .setStartValue(9)
+                        .setValueTextOverride(9, "Predicted")
                         .build();
         sliderView.setSliderInfo(info);
         selectedText.setText("Selected: ");

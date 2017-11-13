@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="super_dark">#1d2c36</color>
+    <color name="super_dark">@android:color/black</color>
 </resources>

@@ -1,1 +1,1 @@
-include ':centersliderview'
+include ':centersliderview', ':sampleslider'

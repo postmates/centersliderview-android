@@ -1,4 +1,4 @@
-package com.widget.postmates.centersliderview;
+package com.postmates.widget.centersliderview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -66,9 +66,10 @@ public class CenterSliderView extends View {
         CENTER;
     }
 
-    OnSliderListener mListener;
+    List<OnSliderListener> mListeners = new ArrayList<>();
 
     int mHeightOfView;
+    // arbitrary width defined
     int mWidthOfView = 500;
     int mCenterAnimationDurationMs;
     // the colors for drawing
@@ -103,7 +104,8 @@ public class CenterSliderView extends View {
     AnimatedVectorDrawable mDraggerDrawable;
     AnimatedVectorDrawable mDraggerBeforeDrawable;
     AnimatedVectorDrawable mDraggerAfterDrawable;
-    Queue<AnimationValue> mDraggerQueue = new LinkedList<>(); // Do I actually need a queue?
+    // Wonder if a queue is necessary...
+    Queue<AnimationValue> mDraggerQueue = new LinkedList<>();
     @SuppressLint("UseSparseArrays")
     Map<AnimationType, AnimationValue> mRunningAnimations = new HashMap<>();
     // dragger dimensions (shouldn't change)
@@ -303,8 +305,12 @@ public class CenterSliderView extends View {
         return getContext().getResources().getQuantityString(mPluralRes, mCurrentValue, mCurrentValue);
     }
 
-    public void setOnSliderListener(OnSliderListener listener) {
-        this.mListener = listener;
+    public void addOnSliderListener(OnSliderListener listener) {
+        mListeners.add(listener);
+    }
+
+    public void removeOnSliderListener(OnSliderListener listener) {
+        mListeners.remove(listener);
     }
 
     private TickLineInfo getTickLineInfo(int value) {
@@ -439,6 +445,11 @@ public class CenterSliderView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        // terminate early if we haven't configured the baseline.
+        if (mBaseLine == null) {
+            return;
+        }
+
         float start = mBaseLine.pointStart.x;
         float end = mBaseLine.pointEnd.x;
         // draw tick lines (and text below)
@@ -466,14 +477,12 @@ public class CenterSliderView extends View {
         }
 
         // Draw baseline
-        if (mBaseLine != null) {
-            canvas.drawLine(
-                    start,
-                    mBaseLine.pointStart.y,
-                    end,
-                    mBaseLine.pointEnd.y,
-                    mBaseLinePaint);
-        }
+        canvas.drawLine(
+                start,
+                mBaseLine.pointStart.y,
+                end,
+                mBaseLine.pointEnd.y,
+                mBaseLinePaint);
 
         // draw slider button
         mDraggerDrawable.draw(canvas);
@@ -562,8 +571,8 @@ public class CenterSliderView extends View {
             case MotionEvent.ACTION_UP:
                 // reset
                 if (pointerId == this.mPointerId) {
-                    if (mListener != null) {
-                        mListener.onValueSelected(mCurrentValue);
+                    for (OnSliderListener listener : mListeners) {
+                        listener.onValueSelected(mCurrentValue);
                     }
                     queueDraggerAnimation(false);
                     queueCenterAnimation();
@@ -884,6 +893,10 @@ public class CenterSliderView extends View {
 
     // public facing classes/interfaces
 
+    /**
+     * Slider Info to configure the slider; presently achieved
+     * via {@link CenterSliderView#setSliderInfo(SliderInfo)}
+     */
     public static class SliderInfo {
         int mMinValue, mMaxValue, mStartValue;
         int mIntervalsToEdge; // number of "spaces" to edge
@@ -954,6 +967,9 @@ public class CenterSliderView extends View {
         }
     }
 
+    /**
+     * Interface for listening to slider events
+     */
     public interface OnSliderListener {
         void onValueSelected(int newValue);
     }

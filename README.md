@@ -21,7 +21,7 @@ This repository is public and available to import from JitPack.
 In the root `build.gradle`:
 ```
 allprojects {
-	repositories {
+    repositories {
 	    ...
 	    maven { url 'https://jitpack.io' }
     }

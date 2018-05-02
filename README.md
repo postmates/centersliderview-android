@@ -5,8 +5,7 @@
 
 ## Usage
 
-[![Release](https://jitpack.io/v/postmates/centersliderview-android.svg)]
-(https://jitpack.io/#postmates/centersliderview-android)
+[![Release](https://jitpack.io/v/postmates/centersliderview-android.svg)](https://jitpack.io/#postmates/centersliderview-android)
 
 Feel free to browse the sampleslider module for an example of how to use this view.
 

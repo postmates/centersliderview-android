@@ -13,6 +13,7 @@ Feel free to browse the sampleslider module for an example of how to use this vi
 a minimum API of 23 to call `reset()`.
 * Most of the UI is drawn directly to the canvas and accessibility has not been added
 to this widget.
+* The slider and tooltip drawables are not currently configurable.
 
 ### Getting started
 

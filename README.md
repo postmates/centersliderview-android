@@ -1,11 +1,10 @@
+[![Release](https://jitpack.io/v/postmates/centersliderview-android.svg)](https://jitpack.io/#postmates/centersliderview-android)
 
 # Center Slider View
 
 ![Demo Gif](./doc_files/slider_demo.gif)
 
 ## Usage
-
-[![Release](https://jitpack.io/v/postmates/centersliderview-android.svg)](https://jitpack.io/#postmates/centersliderview-android)
 
 Feel free to browse the sampleslider module for an example of how to use this view.
 

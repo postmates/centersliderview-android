@@ -92,6 +92,7 @@ public class CenterSliderView extends View {
     LineInfo mBaseLine;
     List<TickLineInfo> mTickLines = new ArrayList<>();
 
+    boolean mInitTickLines = false;
     int mHeightBuffer;
     // drawing dimensions calculated after measure pass
     int mBaselineHeight;
@@ -104,7 +105,6 @@ public class CenterSliderView extends View {
     AnimatedVectorDrawable mDraggerDrawable;
     AnimatedVectorDrawable mDraggerBeforeDrawable;
     AnimatedVectorDrawable mDraggerAfterDrawable;
-    // Wonder if a queue is necessary...
     Queue<AnimationValue> mDraggerQueue = new LinkedList<>();
     @SuppressLint("UseSparseArrays")
     Map<AnimationType, AnimationValue> mRunningAnimations = new HashMap<>();
@@ -268,12 +268,7 @@ public class CenterSliderView extends View {
     public void setSliderInfo(SliderInfo sliderInfo) {
         this.mSliderInfo = sliderInfo;
         mCurrentValue = sliderInfo.mStartValue;
-        int width = getMeasuredWidth();
-        if (width > 0) {
-            initializeTickLines(width);
-        }
-        // redraw all lines and reset
-        requestLayout();
+        mInitTickLines = true;
         mIsAnimating = false;
         mPointerId = -1;
     }
@@ -324,7 +319,7 @@ public class CenterSliderView extends View {
         }
 
         int diff = value - first.value;
-        if (diff >= mTickLines.size()) {
+        if (diff >= mTickLines.size() || diff < 0) {
             return null;
         }
 
@@ -362,6 +357,17 @@ public class CenterSliderView extends View {
     }
 
     @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+
+        if (mInitTickLines) {
+            mInitTickLines = false;
+            initializeTickLines(right - left);
+            resetCenterAlignment();
+        }
+    }
+
+    @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         if (w == 0 || h == 0) {
@@ -389,7 +395,7 @@ public class CenterSliderView extends View {
             int totalIntervals = mSliderInfo.mIntervalsToEdge * 2;
             mTickIntervalWidth = Math.abs(mBaseLine.getXDiff()) / totalIntervals;
 
-            initializeTickLines(w);
+            mInitTickLines = true;
 
             // add/sub affordances to guarantee the proper color at the gradient points
             float edgeAffordance = 0.01f;
@@ -445,11 +451,6 @@ public class CenterSliderView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        // terminate early if we haven't configured the baseline.
-        if (mBaseLine == null) {
-            return;
-        }
-
         float start = mBaseLine.pointStart.x;
         float end = mBaseLine.pointEnd.x;
         // draw tick lines (and text below)
@@ -476,13 +477,15 @@ public class CenterSliderView extends View {
             }
         }
 
-        // Draw baseline
-        canvas.drawLine(
-                start,
-                mBaseLine.pointStart.y,
-                end,
-                mBaseLine.pointEnd.y,
-                mBaseLinePaint);
+        if (mBaseLine != null) {
+            // Draw baseline
+            canvas.drawLine(
+                    start,
+                    mBaseLine.pointStart.y,
+                    end,
+                    mBaseLine.pointEnd.y,
+                    mBaseLinePaint);
+        }
 
         // draw slider button
         mDraggerDrawable.draw(canvas);
@@ -592,6 +595,7 @@ public class CenterSliderView extends View {
      * In addition to setting the offset, it will add/remove the appropriate lines
      * to the {@link #mTickLines} list as they enter/leave the screen
      * @param offset
+     * @param forceTickMeasure
      */
     private void setXOffset(float offset, boolean forceTickMeasure) {
         TickLineInfo first = mTickLines.get(0);
@@ -813,14 +817,9 @@ public class CenterSliderView extends View {
         if (baseAnimation != null) {
             if (mTimeMs > mCenterAnimationDurationMs &&
                     mTimeMs % mCenterAnimationDurationMs > MS_PER_FRAME) {
-                normalizeXOffset();
-                mMutableDraggerBounds.left = mDraggerBounds.left;
-                mMutableDraggerBounds.right = mDraggerBounds.right;
+                resetCenterAlignment();
 
                 mRunningAnimations.remove(AnimationType.CENTER);
-                mTimeMs = 0;
-                xBarDistance = 0;
-                xDraggerDistance = 0;
             } else {
                 // ensure that the end is reached
                 float interpolationTime = mTimeMs > mCenterAnimationDurationMs ?
@@ -843,6 +842,33 @@ public class CenterSliderView extends View {
         }
 
         return baseAnimation != null;
+    }
+
+    /**
+     * This will re-center the baseline, ticks, and dragger. It also sets the bounds and resets
+     * the animations for dragger and tooltip drawables.
+     */
+    private void resetCenterAlignment() {
+        // if we haven't initialized the dragger bounds yet, then terminate
+        if (mMutableDraggerBounds == null) {
+            return;
+        }
+
+        normalizeXOffset();
+        mMutableDraggerBounds.left = mDraggerBounds.left;
+        mMutableDraggerBounds.right = mDraggerBounds.right;
+
+        mDraggerBeforeDrawable.reset();
+        mDraggerAfterDrawable.reset();
+        mDraggerBeforeDrawable.setBounds(mMutableDraggerBounds);
+        mDraggerAfterDrawable.setBounds(mMutableDraggerBounds);
+
+        mTooltipBounds.offsetTo(mDraggerBounds.left + mTooltipWidthDiff, mTooltipBounds.top);
+        mTooltipDrawable.setBounds(mTooltipBounds);
+
+        mTimeMs = 0;
+        xBarDistance = 0;
+        xDraggerDistance = 0;
     }
 
     //

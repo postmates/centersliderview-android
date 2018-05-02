@@ -8,8 +8,6 @@
 Feel free to browse the sampleslider module for an example of how to use this view.
 
 ### Early Caveats
-* This project is currently not available in jcenter.  I hope to do this in the near
-future to make it easier to import.
 * The minimum api for this library is 23(M) because `AnimatedVectorDrawable`s have
 a minimum API of 23 to call `reset()`.
 * Most of the UI is drawn directly to the canvas and accessibility has not been added

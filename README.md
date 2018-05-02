@@ -1,6 +1,6 @@
 
 # Center Slider View
-[![Release](https://github.com/postmates/centersliderview-android)](https://jitpack.io/#postmates/centersliderview-android)
+[![Release](https://jitpack.io/v/postmates/Repo.svg)](https://jitpack.io/#postmates/centersliderview-android)
 
 ![Demo Gif](./doc_files/slider_demo.gif)
 

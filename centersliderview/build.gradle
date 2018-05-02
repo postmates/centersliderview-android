@@ -9,6 +9,7 @@ android {
     defaultConfig {
         minSdkVersion 23
         targetSdkVersion 27
+        // when upgrading the version, make sure to update README's Getting Started dependency version
         versionCode 10001
         versionName "1.0.1"
 

@@ -17,11 +17,21 @@ to this widget.
 
 ### Getting started
 
-Clone the project and link to the module/project
+This repository is public and available to import from JitPack.
 
+In the root `build.gradle`:
+```
+allprojects {
+	repositories {
+	    ...
+	    maven { url 'https://jitpack.io' }
+    }
+}
+```
+Then, in the appropriate module's build.gradle:
 ```
 dependencies {
-   implementation project(":centersliderview")
+    implementation 'com.github.postmates:centersliderview-android:v1.0.1'
 }
 ```
 

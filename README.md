@@ -1,6 +1,9 @@
 
 # Center Slider View
 
+[![Release](https://jitpack.io/v/User/Repo.svg)]
+(https://jitpack.io/#User/Repo)
+
 ![Demo Gif](./doc_files/slider_demo.gif)
 
 ## Usage

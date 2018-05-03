@@ -88,7 +88,9 @@ The animations themselves are processed by a handler that runs every 16 ms
 [xml attributes][3]  
 [slider design link][1]  
 [developer seekbar link][2]  
+[original blog post][4]
 
 [1]: https://material.io/guidelines/components/sliders.html
 [2]: https://developer.android.com/reference/android/widget/SeekBar.html
 [3]: https://github.com/postmates/centersliderview-android/wiki/XML-attributes
+[4]: https://blog.postmates.com/a-simple-centersliderview-for-android-4a45e2e9ba5e

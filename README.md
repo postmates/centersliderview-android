@@ -39,7 +39,7 @@ dependencies {
 The `CenterSliderView` is a widget, which can be added directly to
 your layout files in xml.
 
-See the [wiki page on xml attributes][3] for more details.
+See the [wiki page on xml attributes][3] for more details.  
 There's also information for overriding colors in [this wiki page][5]
 
 ### Managing the view
@@ -94,4 +94,4 @@ The animations themselves are processed by a handler that runs every 16 ms
 [2]: https://developer.android.com/reference/android/widget/SeekBar.html
 [3]: https://github.com/postmates/centersliderview-android/wiki/XML-attributes
 [4]: https://blog.postmates.com/a-simple-centersliderview-for-android-4a45e2e9ba5e
-[5]: https://github.com/postmates/centersliderview-android/wiki/XML-attributes
+[5]: https://github.com/postmates/centersliderview-android/wiki/Drawable-Overrides

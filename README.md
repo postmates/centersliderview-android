@@ -39,7 +39,7 @@ dependencies {
 The `CenterSliderView` is a widget, which can be added directly to
 your layout files in xml.
 
-See the [wiki page on xml attributes][3] for more details.  
+See the [wiki page on xml attributes][3] for more details.
 There's also information for overriding colors in [this wiki page][5]
 
 ### Managing the view
@@ -85,7 +85,8 @@ The animations themselves are processed by a handler that runs every 16 ms
 
 ### References:
 
-[xml attributes][3]  
+[xml attributes][3]
+[drawable overrides][5]  
 [slider design link][1]  
 [developer seekbar link][2]  
 [original blog post][4]

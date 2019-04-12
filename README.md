@@ -13,7 +13,6 @@ Feel free to browse the sampleslider module for an example of how to use this vi
 a minimum API of 23 to call `reset()`.
 * Most of the UI is drawn directly to the canvas and accessibility has not been added
 to this widget.
-* The slider and tooltip drawables are not currently configurable.
 
 ### Getting started
 
@@ -31,16 +30,17 @@ allprojects {
 Then, in the appropriate module's build.gradle:
 ```
 dependencies {
-    implementation 'com.github.postmates:centersliderview-android:v1.0.1'
+    implementation 'com.github.postmates:centersliderview-android:v1.0.2'
 }
 ```
 
 ### Adding the widget
 
-The `CenterSliderView` is a widget, like a typical widget and can be added directly to
+The `CenterSliderView` is a widget, which can be added directly to
 your layout files in xml.
 
 See the [wiki page on xml attributes][3] for more details.
+There's also information for overriding colors in [this wiki page][5]
 
 ### Managing the view
 
@@ -94,3 +94,4 @@ The animations themselves are processed by a handler that runs every 16 ms
 [2]: https://developer.android.com/reference/android/widget/SeekBar.html
 [3]: https://github.com/postmates/centersliderview-android/wiki/XML-attributes
 [4]: https://blog.postmates.com/a-simple-centersliderview-for-android-4a45e2e9ba5e
+[5]: https://github.com/postmates/centersliderview-android/wiki/XML-attributes

@@ -25,11 +25,11 @@
         android:onClick="resetClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/selected_text"
+        app:layout_constraintRight_toLeftOf="@id/selected_text"
         app:layout_constraintTop_toBottomOf="@id/center_slider_view" />
 
     <TextView
-        android:id="@id/selected_text"
+        android:id="@+id/selected_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Selected: "

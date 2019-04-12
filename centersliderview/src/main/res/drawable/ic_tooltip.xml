@@ -5,7 +5,7 @@
         android:viewportHeight="48.0">
     <path
         android:pathData="M42.4,44L38.67,47.72C38.3,48.09 37.7,48.09 37.33,47.72L33.6,44L3,44C1.34,44 0,42.66 0,41L0,3C0,1.34 1.34,0 3,0L74,0C75.66,-0 77,1.34 77,3L77,41C77,42.66 75.66,44 74,44L42.4,44Z"
-        android:strokeColor="#00000000"
-        android:fillColor="#4A565E"
-        android:strokeWidth="1"/>
+        android:strokeColor="@color/CenterSliderView__tooltipStrokeColor"
+        android:fillColor="@color/CenterSliderView__tooltipFillColor"
+        android:strokeWidth="@integer/CenterSliderView__tooltipStrokeWidth"/>
 </vector>

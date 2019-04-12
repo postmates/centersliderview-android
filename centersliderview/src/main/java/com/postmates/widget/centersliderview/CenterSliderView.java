@@ -14,7 +14,6 @@ import android.graphics.Shader;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.VectorDrawable;
 import android.os.Handler;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -30,6 +29,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Queue;
+
+import androidx.annotation.Nullable;
 
 /**
  * Slider widget designed specifically for changing the time in the header.

@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- attributes for the CenterSliderView -->
+    <declare-styleable name="CenterSliderView">
+        <attr name="baseLineColor" format="color" />
+        <attr name="baseLineTextSize" format="dimension" />
+        <attr name="baseLineTextColor" format="color" />
+        <attr name="centerAnimationDuration" format="integer" />
+        <attr name="paintColorFade" format="color" />
+        <attr name="tickHeightLarge" format="dimension" />
+        <attr name="tickHeightSmall" format="dimension" />
+        <attr name="tooltipHeight" format="dimension" />
+        <attr name="tooltipTextColor" format="color" />
+        <attr name="tooltipTextSize" format="dimension" />
+        <attr name="unitReference" format="reference" /> <!-- this should be plurals attr -->
+    </declare-styleable>
+
+    <!-- colors intentionally designed for override if desired -->
+    <color name="CenterSliderView__draggerFillColor">@android:color/white</color>
+    <color name="CenterSliderView__draggerStrokeColor">@android:color/transparent</color>
+    <color name="CenterSliderView__draggerArrowFillColor">@android:color/black</color>
+    <color name="CenterSliderView__draggerArrowStrokeColor">@android:color/transparent</color>
+    <color name="CenterSliderView__tooltipFillColor">#4A565E</color>
+    <color name="CenterSliderView__tooltipStrokeColor">@android:color/transparent</color>
+
+    <!-- integers intentionally designed for override if desired -->
+    <integer name="CenterSliderView__draggerStrokeWidth">1</integer>
+    <integer name="CenterSliderView__draggerArrowStrokeWidth">1</integer>
+    <integer name="CenterSliderView__tooltipStrokeWidth">1</integer>
 </resources>

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" >
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="CenterSliderView__draggerFillColor" tools:override="true">@android:color/holo_orange_light</color>
+    <color name="CenterSliderView__draggerStrokeColor" tools:override="true">@android:color/holo_green_light</color>
+    <color name="CenterSliderView__draggerArrowFillColor" tools:override="true">@android:color/holo_blue_bright</color>
+    <color name="CenterSliderView__draggerArrowStrokeColor" tools:override="true">@android:color/holo_green_dark</color>
+    <color name="CenterSliderView__tooltipFillColor" tools:override="true">@android:color/holo_purple</color>
+    <color name="CenterSliderView__tooltipStrokeColor" tools:override="true">@android:color/holo_red_light</color>
+
 </resources>

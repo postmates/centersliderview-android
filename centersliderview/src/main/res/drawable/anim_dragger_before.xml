@@ -14,21 +14,21 @@
                 <path
                     android:name="path"
                     android:pathData="M 18 0 L 30 0 C 39.941 0 48 8.059 48 18 L 48 18 C 48 27.941 39.941 36 30 36 L 18 36 C 8.059 36 0 27.941 0 18 L 0 18 C 0 8.059 8.059 0 18 0 Z"
-                    android:fillColor="@android:color/white"
-                    android:strokeColor="@android:color/transparent"
-                    android:strokeWidth="1"/>
+                    android:fillColor="@color/CenterSliderView__draggerFillColor"
+                    android:strokeColor="@color/CenterSliderView__draggerStrokeColor"
+                    android:strokeWidth="@integer/CenterSliderView__draggerStrokeWidth"/>
                 <path
                     android:name="path_1"
                     android:pathData="M 32.71 14.71 L 35.29 17.29 L 35.29 17.29 C 35.68 17.68 35.68 18.32 35.29 18.71 L 32.71 21.29 L 32.71 21.29 C 32.32 21.68 31.68 21.68 31.29 21.29 C 31.11 21.11 31 20.85 31 20.59 L 31 15.41 L 31 15.41 C 31 14.86 31.45 14.41 32 14.41 C 32.27 14.41 32.52 14.52 32.71 14.71 Z"
-                    android:fillColor="@color/super_dark"
-                    android:strokeColor="@android:color/transparent"
-                    android:strokeWidth="1"/>
+                    android:fillColor="@color/CenterSliderView__draggerArrowFillColor"
+                    android:strokeColor="@color/CenterSliderView__draggerArrowStrokeColor"
+                    android:strokeWidth="@integer/CenterSliderView__draggerArrowStrokeWidth"/>
                 <path
                     android:name="path_2"
                     android:pathData="M 15.29 14.71 L 12.71 17.29 L 12.71 17.29 C 12.32 17.68 12.32 18.32 12.71 18.71 L 15.29 21.29 L 15.29 21.29 C 15.68 21.68 16.32 21.68 16.71 21.29 C 16.89 21.11 17 20.85 17 20.59 L 17 15.41 L 17 15.41 C 17 14.86 16.55 14.41 16 14.41 C 15.73 14.41 15.48 14.52 15.29 14.71 Z"
-                    android:fillColor="@color/super_dark"
-                    android:strokeColor="@android:color/transparent"
-                    android:strokeWidth="1"/>
+                    android:fillColor="@color/CenterSliderView__draggerArrowFillColor"
+                    android:strokeColor="@color/CenterSliderView__draggerArrowStrokeColor"
+                    android:strokeWidth="@integer/CenterSliderView__draggerArrowStrokeWidth"/>
             </group>
         </vector>
     </aapt:attr>

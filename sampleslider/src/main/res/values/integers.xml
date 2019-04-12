@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <integer name="CenterSliderView__draggerStrokeWidth" tools:override="true">5</integer>
+    <integer name="CenterSliderView__draggerArrowStrokeWidth" tools:override="true">10</integer>
+    <integer name="CenterSliderView__tooltipStrokeWidth" tools:override="true">8</integer>
+</resources>

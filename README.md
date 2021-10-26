@@ -1,3 +1,6 @@
+# Now Archived and Forked
+_centersliderview-android_ will not be maintained in this repository going forward. Please use, create issues on, and make PRs to the fork of _centersliderview-android_ located [here](https://github.com/jlee923/centersliderview-android).
+
 [![Release](https://jitpack.io/v/postmates/centersliderview-android.svg)](https://jitpack.io/#postmates/centersliderview-android)
 
 # Center Slider View
